@@ -1,0 +1,15 @@
+as -32 -gstabs praticas_01.s -o praticas_01.o
+
+ld -m elf_i386 praticas_01.o -o praticas_01
+
+ld -m elf_i386 arquivo.o -l c -dynamic-linker /lib/ld-linux.so.2 -o arquivo
+
+gdb praticas_01
+    break _start #breackpoint no start
+
+    run #começar a execucao
+    info all-register
+    cont #ir para o próximo breackpoint 
+    print x
+    info adrres x 
+    info reg eax #como informa apenas 1 registrador
